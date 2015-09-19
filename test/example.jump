@@ -1,0 +1,17 @@
+
+let f =
+  >> A where
+    | A ->
+      let x = 2 + 1 in
+      >> B x
+    | B x ->
+      >> (x+y) where
+        | 1 -> >> 5 
+        | 2 -> let z = 1 in >> C z
+        | x -> x+1 
+      end
+    | C z -> z+1
+  end
+
+let x = f x
+

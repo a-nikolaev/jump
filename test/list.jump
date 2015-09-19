@@ -1,0 +1,41 @@
+
+let empty = ()
+
+let make = fun len -> fun v ->
+  >> (len, empty) where
+  | (0, acc) -> acc
+  | (n, acc) -> >> (n-1, (v,acc))
+  end
+
+let init = fun len -> fun f ->
+  >> (len > 0) where
+  | true ->
+      >> (len, empty) where
+      | (0, acc) -> acc
+      | (n, acc) -> 
+          let new_acc = (f(n-1), acc) in
+          >> (n-1, new_acc)
+      end
+  | false -> empty
+  end
+
+let rev = fun ls ->
+  let f = fun acc -> fun ls ->
+    >> ls where
+    | () -> acc
+    | (hd, tl) -> f (hd, acc) tl
+    end
+  in
+  f () ls
+
+let x = 
+  >> A 1 where 
+  | A 1 -> 2
+  | A x -> x
+  end
+
+let x = make 5 10
+
+let x1 = init 5 (fun i -> i+i)
+
+let x2 = rev x1

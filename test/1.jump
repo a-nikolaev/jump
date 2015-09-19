@@ -1,0 +1,10 @@
+let x = 1
+
+let f = fun x -> 
+  let g = fun y -> 
+    let z = x y in 
+    f z + f z + f z 
+  in 
+  x
+
+let z = 2+3

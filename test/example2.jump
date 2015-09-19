@@ -1,0 +1,8 @@
+
+
+let f = 
+  >> A 3 where
+  | A 3 -> >> A 2
+  | A 2 -> 4
+  end
+

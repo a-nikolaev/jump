@@ -1,0 +1,22 @@
+
+let fib = fun n ->
+  >> (n, 0, 1) where
+  | (0, x, y) -> y
+  | (k, x, y) -> >> (k-1, y, x+y)
+  end
+
+let x = fib 5
+
+let x = fib 6
+
+let x = fib 7
+
+let x = fib 8
+
+let first_ten = 
+  >> (10, ()) where
+  | (0, acc) -> acc
+  | (n, acc) -> 
+      let new_acc = (fib n, acc) in
+      >> (n-1, new_acc)
+  end

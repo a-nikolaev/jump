@@ -1,0 +1,23 @@
+
+let find = fun n -> fun p ->>> X n where
+  | X 0 ->>> Fail
+  | X x ->>> Y n where
+      | Y 0 ->>> X (x-1)
+      | Y y ->>> Z n where
+          | Z 0 ->>> Y (y-1)
+          | Z z ->>> (p x y z) where
+              | true ->>> Done (x,y,z)
+              | false ->>> Z (z-1)
+              end
+          end
+      end
+  | Done x -> x 
+  | Fail -> ()
+  end
+
+let x = 
+  find 9 
+    (fun x -> fun y -> fun z ->>> (x,y,z) where 
+      | (5,3,7) -> true 
+      | q -> false
+      end)

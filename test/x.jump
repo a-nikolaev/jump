@@ -1,0 +1,32 @@
+
+let sum = fun n ->
+  >> n where
+  | 0 -> 0
+  | n -> n + sum (n-1)
+  end
+
+let sum_tail = fun n ->
+  let f = fun acc -> fun n ->
+    >> n where
+    | 0 -> acc
+    | n -> f (acc+n) (n-1)
+    end
+  in
+  f 0 n
+
+let fib = fun n ->
+  >> n where
+  | 0 -> 0
+  | 1 -> 1
+  | n -> fib (n-2) + fib (n-1)
+  end
+
+
+let x = sum_tail 100000
+
+let x = fib 1
+let x = fib 2
+let x = fib 3
+let x = fib 4
+
+let (x, y) = (y, x)

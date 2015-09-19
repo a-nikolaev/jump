@@ -1,0 +1,12 @@
+
+let sum = fun n ->
+  >> (n, 0) where
+  | (0, acc) -> acc
+  | (k, acc) -> >> (k-1, acc+k)
+  end
+
+let x = sum 1
+
+let x = sum 10
+
+let x = sum 100

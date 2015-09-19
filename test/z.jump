@@ -1,0 +1,16 @@
+
+let f = fun x ->
+  >> x where
+  | 0 -> 0
+  | n -> 
+      let f = fun x -> x+100 in
+      f n
+  end
+
+let x = f 0
+
+let x = f 1 
+
+let x = f 2
+
+let x = f (f 1)
