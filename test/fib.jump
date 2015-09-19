@@ -1,7 +1,7 @@
 
 let fib = fun n ->
   >> (n, 0, 1) where
-  | (0, x, y) -> y
+  | (0, x, y) -> x
   | (k, x, y) -> >> (k-1, y, x+y)
   end
 
@@ -15,7 +15,7 @@ let x = fib 8
 
 let first_ten = 
   >> (10, ()) where
-  | (0, acc) -> acc
+  | (0, acc) -> (fib 0, acc)
   | (n, acc) -> 
       let new_acc = (fib n, acc) in
       >> (n-1, new_acc)
