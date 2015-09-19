@@ -7,9 +7,9 @@ a new control flow mechanism, which can be called **functional jump**.
 It is a new generalized control flow mechanism for implementing 
 both iteration and branching. Roughly speaking, it tries to unify the following concepts:
 
-  - pattern matching
-  - ad-hoc exception introduction and handling 
-  - goto (yay! the considered-harmful one!)
+  - **pattern matching**
+  - **ad-hoc exception introduction and handling** 
+  - **goto** (yay! the considered-harmful one!)
 
 ## Example
 
@@ -23,7 +23,7 @@ A function computing the sum of the first `n` integers:
 
 ## How to build and run
 
-You have to unstall `ocaml` compiler and `menhir` parser generator. 
+You have to install `ocaml` compiler and `menhir` parser generator. 
 It is recommended to use OCaml package manager `opam` to install `menhir`.
 
     make
@@ -36,6 +36,10 @@ In addition, the file "jump.vim" provides some basic syntax highlighting for Vim
 
   - Practically no error reporting.
   - No documentation about the jump opearation.
+
+## References
+
+1. Edsger Dijkstra (March 1968). "Go To Statement Considered Harmful". Communications of the ACM 11 (3): 147–148. 
 
 ## License
 
