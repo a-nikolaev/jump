@@ -35,11 +35,12 @@ In addition, the file "jump.vim" provides some basic syntax highlighting for Vim
 ## Status
 
   - Practically no error reporting.
-  - No documentation about the jump opearation.
+  - No documentation about the functional jump control structure.
 
 ## References
 
-1. Edsger Dijkstra (March 1968). "Go To Statement Considered Harmful". Communications of the ACM 11 (3): 147–148. 
+1. Edsger Dijkstra (March 1968). "[Go To Statement Considered Harmful](http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html)".
+Communications of the ACM 11 (3): 147–148. 
 
 ## License
 
