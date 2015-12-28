@@ -1,15 +1,16 @@
 
 # Functional Jump
 
-This is an example implementation of a simple pure functional language with
-a new control flow mechanism, which can be called **functional jump**.
+This is an example implementation of a simple pure ML-like functional language with
+a **non-standard control flow mechanism**, which we can call **functional jump** for now.
 
-It is a new generalized control flow mechanism for implementing 
+It is a simple generalized control flow mechanism for implementing 
 both iteration and branching. Roughly speaking, it tries to unify the following concepts:
 
   - **pattern matching**
   - **ad-hoc exception introduction and handling** 
-  - **goto** (yay! the considered-harmful one!)
+  - **goto** (yay! the considered-harmful one!) 
+  - related to continuations
 
 ## Example
 
@@ -20,6 +21,17 @@ A function computing the sum of the first `n` integers:
       | (0, acc) -> acc
       | (k, acc) -> >> (k-1, acc+k)
       end
+
+## Goals
+
+Potentially, this mechanism can be useful for simplifying recursive function definitions that
+describe iterations, but involve complicated logic or order of execution that is painful to
+express in a clear way with normal recursion.
+
+It provides seamless integration of finite-automaton-like control flow into a functional language.
+Kinda wondering if there is any relation to co-induction or any other fancy topics.
+
+It seems that the correctness of labels and jumps can be statically type-checked, but I haven't proved it yet.
 
 ## How to build and run
 
@@ -35,7 +47,7 @@ In addition, the file "jump.vim" provides some basic syntax highlighting for Vim
 ## Status
 
   - Practically no error reporting.
-  - No documentation about the functional jump control structure.
+  - No documentation about this control flow mechanism.
 
 ## References
 
